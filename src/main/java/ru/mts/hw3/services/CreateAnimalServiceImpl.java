@@ -10,10 +10,15 @@ public class CreateAnimalServiceImpl implements CreateAnimalService {
         } while (i < 10);
     }
 
-    public void addAnimal(String breed, String name, Double cost, String character, int count) {
-        for (int i = 0; i < 3; i++){
-
+    public void addAnimal(int count) {
+        for (int i = 0; i < count; i++) {
+            randomAnimal();
         }
+    }
 
+    public void addAnimal() {
+        for (int i = 0; i < 3; i++) {
+            randomAnimal();
+        }
     }
 }

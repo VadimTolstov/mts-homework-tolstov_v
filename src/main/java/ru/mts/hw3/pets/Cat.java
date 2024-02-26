@@ -10,8 +10,6 @@ public class Cat extends Pet {
 
     @Override
     public void play() {
-        System.out.println("Играю с шариком");
+        System.out.println("Я Pet, играю с шариком");
     }
-
-
 }

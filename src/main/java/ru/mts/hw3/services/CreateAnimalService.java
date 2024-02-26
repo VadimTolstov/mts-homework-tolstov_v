@@ -9,11 +9,11 @@ import java.util.Random;
 
 public interface CreateAnimalService {
 
-     default void randomAnimal() {
+    default void randomAnimal() {
         int i = new Random().nextInt(1, 5);
         switch (i) {
             case 1:
-                System.out.println(new Shark("Тигровая", "Валера", randomPrice(), "Злая"));
+                System.out.println(new Shark("nameAnimal", "Валера", randomPrice(), "Злая"));
                 break;
             case 2:
                 System.out.println(new Wolf("Таёжный", "Серега", randomPrice(), "Средне"));
@@ -37,7 +37,8 @@ public interface CreateAnimalService {
         }
     }
 
-   private Double randomPrice(){
-      return new Random().nextDouble(1, 100000);
-  }
+    private Double randomPrice() {
+        return new Random().nextDouble(1, 100000);
+    }
 }
+
