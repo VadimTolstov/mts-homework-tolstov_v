@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c85c5074-dc1d-4ba2-a344-0da079518e07" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/pets/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/pets/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/pets/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/pets/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/predators/Shark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/predators/Shark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/predators/Wolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/predators/Wolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/services/CreateAnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/services/CreateAnimalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/services/CreateAnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mts/hw3/services/CreateAnimalServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="c85c5074-dc1d-4ba2-a344-0da079518e07" name="Changes" comment="HW-1: &#10;1) Построена иерархия животных в виде наследуемых классов.&#10;2) Создан interface CreateAnimalService c default методом по созданию 10 уникальных животных при помощи метода while&#10;3) CreateAnimalServiceImpl создать перегруженный метод и переопределен default метод interface CreateAnimalService&#10;в общем все как по заданию" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,9 +44,22 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="feature/HW-1" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/HW-1" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -153,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1708955213240</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HW-1: &#10;1) Построена иерархия животных в виде наследуемых классов.&#10;2) Создан interface CreateAnimalService c default методом по созданию 10 уникальных животных при помощи метода while&#10;3) CreateAnimalServiceImpl создать перегруженный метод и переопределен default метод interface CreateAnimalService&#10;в общем все как по заданию">
+      <created>1708961096306</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708961096306</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +191,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="забыл создать ветку =)" />
-    <option name="LAST_COMMIT_MESSAGE" value="забыл создать ветку =)" />
+    <MESSAGE value="HW-1: &#10;1) Построена иерархия животных в виде наследуемых классов.&#10;2) Создан interface CreateAnimalService c default методом по созданию 10 уникальных животных при помощи метода while&#10;3) CreateAnimalServiceImpl создать перегруженный метод и переопределен default метод interface CreateAnimalService&#10;в общем все как по заданию" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW-1: &#10;1) Построена иерархия животных в виде наследуемых классов.&#10;2) Создан interface CreateAnimalService c default методом по созданию 10 уникальных животных при помощи метода while&#10;3) CreateAnimalServiceImpl создать перегруженный метод и переопределен default метод interface CreateAnimalService&#10;в общем все как по заданию" />
   </component>
 </project>
