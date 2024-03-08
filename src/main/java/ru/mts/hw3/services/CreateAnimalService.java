@@ -5,24 +5,28 @@ import ru.mts.hw3.pets.Dog;
 import ru.mts.hw3.predators.Shark;
 import ru.mts.hw3.predators.Wolf;
 
+import java.util.List;
 import java.util.Random;
 
 public interface CreateAnimalService {
 
-     default void randomAnimal() {
-        int i = new Random().nextInt(1, 5);
-        switch (i) {
+    List<String> charactersList = List.of("Злой", "Добрый", "Нейтральный");
+    List<String> nameList = List.of("Валера", "Зоя", "Анатолий", "Федя", "Анна");
+    List<String> breedList = List.of("Итальянская", "Русская", "Американская", "Немецкая");
+
+    default void randomAnimal() {
+        switch (new Random().nextInt(1, 5)) {
             case 1:
-                System.out.println(new Shark("Тигровая", "Валера", randomPrice(), "Злая"));
+                System.out.println(new Shark(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList)));
                 break;
             case 2:
-                System.out.println(new Wolf("Таёжный", "Серега", randomPrice(), "Средне"));
+                System.out.println(new Wolf(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList)));
                 break;
             case 3:
-                System.out.println(new Dog("Дворняга", "Бим", randomPrice(), "Добрый"));
+                System.out.println(new Dog(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList)));
                 break;
             case 4:
-                System.out.println(new Cat("Чеширский", "Мурка", randomPrice(), "Не тральный"));
+                System.out.println(new Cat(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList)));
                 break;
             default:
                 System.out.println("Что-то пошло не так");
@@ -37,7 +41,12 @@ public interface CreateAnimalService {
         }
     }
 
-   private Double randomPrice(){
-      return new Random().nextDouble(1, 100000);
-  }
+    private String randomSpecifications(List<String> list) {
+        return list.get(new Random().nextInt(list.size()));
+    }
+
+    private Double randomPrice() {
+        return new Random().nextDouble(1, 100000);
+    }
 }
+

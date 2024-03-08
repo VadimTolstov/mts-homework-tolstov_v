@@ -10,6 +10,6 @@ public class Wolf extends Predator {
 
     @Override
     public void eat() {
-        System.out.println("Ем зайцев");
+        System.out.println("Я Wolf, ем зайцев");
     }
 }

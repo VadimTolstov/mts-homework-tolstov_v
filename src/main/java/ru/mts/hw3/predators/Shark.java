@@ -10,6 +10,6 @@ public class Shark extends Predator {
 
     @Override
     public void eat() {
-        System.out.println("Ем рыбу");
+        System.out.println("Я Shark, ем рыбу");
     }
 }
