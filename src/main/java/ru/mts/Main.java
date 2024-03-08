@@ -8,6 +8,5 @@ public class Main {
         createAnimalService.createAnimal();
         createAnimalService.addAnimal(3);
         createAnimalService.addAnimal();
-
     }
 }

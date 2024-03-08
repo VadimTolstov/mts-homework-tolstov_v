@@ -15,8 +15,7 @@ public interface CreateAnimalService {
     List<String> breedList = List.of("Итальянская", "Русская", "Американская", "Немецкая");
 
     default void randomAnimal() {
-        int i = new Random().nextInt(1, 5);
-        switch (i) {
+        switch (new Random().nextInt(1, 5)) {
             case 1:
                 System.out.println(new Shark(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList)));
                 break;
