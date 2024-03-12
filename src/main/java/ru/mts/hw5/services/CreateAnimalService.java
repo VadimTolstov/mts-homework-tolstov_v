@@ -1,10 +1,10 @@
-package ru.mts.hw3.services;
+package ru.mts.hw5.services;
 
-import ru.mts.hw3.AbstractAnimal;
-import ru.mts.hw3.pets.Cat;
-import ru.mts.hw3.pets.Dog;
-import ru.mts.hw3.predators.Shark;
-import ru.mts.hw3.predators.Wolf;
+import ru.mts.hw5.AbstractAnimal;
+import ru.mts.hw5.pets.Cat;
+import ru.mts.hw5.pets.Dog;
+import ru.mts.hw5.predators.Shark;
+import ru.mts.hw5.predators.Wolf;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,7 +34,7 @@ public interface CreateAnimalService {
             case 4:
                 Cat cat = new Cat(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
                 System.out.println(cat);
-                return  cat;
+                return cat;
         }
         return null;
     }

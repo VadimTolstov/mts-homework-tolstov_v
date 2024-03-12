@@ -1,6 +1,6 @@
-package ru.mts.hw3.predators;
+package ru.mts.hw5.predators;
 
-import ru.mts.hw3.Predator;
+import ru.mts.hw5.Predator;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package ru.mts.hw3.services;
+package ru.mts.hw5.services;
 
 public class SearchServiceImpl implements SearchService {
 }
