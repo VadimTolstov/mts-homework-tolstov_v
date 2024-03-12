@@ -4,5 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public class InvalidAnimalBirthDateException extends InvocationTargetException {
     public InvalidAnimalBirthDateException(String message) {
-        System.out.println(message);    }
+        System.out.println(message);
+    }
 }

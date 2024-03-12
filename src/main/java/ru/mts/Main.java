@@ -2,7 +2,6 @@ package ru.mts;
 
 import ru.mts.hw5.AbstractAnimal;
 import ru.mts.hw5.exception.InvalidAnimalBirthDateException;
-import ru.mts.hw5.exception.InvalidAnimalException;
 import ru.mts.hw5.services.CreateAnimalServiceImpl;
 import ru.mts.hw5.services.SearchServiceImpl;
 
