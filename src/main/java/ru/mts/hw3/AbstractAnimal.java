@@ -9,14 +9,12 @@ public abstract class AbstractAnimal implements Animal {
     protected String name; // имя
     protected Double cost; // цена в магазине
     protected String character; // характер
-    protected LocalDate birthDate;
 
-    public AbstractAnimal(String breed, String name, Double cost, String character, LocalDate birthDate) {
+    public AbstractAnimal(String breed, String name, Double cost, String character) {
         this.breed = breed;
         this.name = name;
         this.cost = cost;
         this.character = character;
-        this.birthDate = birthDate;
     }
 
     @Override
@@ -39,9 +37,6 @@ public abstract class AbstractAnimal implements Animal {
         return character;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
 
     @Override
     public String toString() {
@@ -51,7 +46,6 @@ public abstract class AbstractAnimal implements Animal {
                 ", name='" + name + '\'' +
                 ", cost=" + cost +
                 ", character='" + character + '\'' +
-                ", birthDate=" + dateTimeFormatter.format(birthDate) +
                 '}';
     }
 }

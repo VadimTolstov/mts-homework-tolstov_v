@@ -17,26 +17,25 @@ public interface CreateAnimalService {
     List<String> nameList = List.of("Валера", "Зоя", "Анатолий", "Федя", "Анна");
     List<String> breedList = List.of("Итальянская", "Русская", "Американская", "Немецкая");
 
-    default AbstractAnimal randomAnimal() throws NullPointerException {
+    default void randomAnimal()  {
         switch (new Random().nextInt(1, 5)) {
             case 1:
-                Shark shark = new Shark(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Shark shark = new Shark(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList));
                 System.out.println(shark);
-                return shark;
+                break;
             case 2:
-                Wolf wolf = new Wolf(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Wolf wolf = new Wolf(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList));
                 System.out.println(wolf);
-                return wolf;
+                break;
             case 3:
-                Dog dog = new Dog(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Dog dog = new Dog(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList));
                 System.out.println(dog);
-                return dog;
+                break;
             case 4:
-                Cat cat = new Cat(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Cat cat = new Cat(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList));
                 System.out.println(cat);
-                return  cat;
+                break;
         }
-        return null;
     }
 
     default void createAnimal() {
@@ -55,10 +54,5 @@ public interface CreateAnimalService {
         return new Random().nextDouble(1, 100000);
     }
 
-    private LocalDate randomDate() {
-        int hundredYears = 100 * 365;
-        return LocalDate.ofEpochDay(ThreadLocalRandom
-                .current().nextInt(-hundredYears, hundredYears));
-    }
 }
 
