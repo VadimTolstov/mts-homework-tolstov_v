@@ -9,9 +9,6 @@ import ru.mts.hw5.services.SearchServiceImpl;
 public class Main {
     public static void main(String[] args) {
         CreateAnimalServiceImpl createAnimalService = new CreateAnimalServiceImpl();
-        createAnimalService.createAnimal();
-        createAnimalService.addAnimal(3);
-        createAnimalService.addAnimal();
 
         AbstractAnimal abstractAnimal;
         SearchServiceImpl service = new SearchServiceImpl();
@@ -24,6 +21,7 @@ public class Main {
                 service.checkLeapYearAnimal(abstractAnimal);
             }
         } catch (InvalidAnimalBirthDateException | NullPointerException e) {
-            System.out.println("Работа метода завершилась ошибкой " + e.getMessage());        }
+            System.out.println("Работа метода завершилась ошибкой " + e.getMessage());
+        }
     }
 }
