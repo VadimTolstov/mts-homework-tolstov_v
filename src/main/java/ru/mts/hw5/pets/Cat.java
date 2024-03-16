@@ -1,6 +1,6 @@
-package ru.mts.hw3.pets;
+package ru.mts.hw5.pets;
 
-import ru.mts.hw3.Pet;
+import ru.mts.hw5.Pet;
 
 import java.time.LocalDate;
 

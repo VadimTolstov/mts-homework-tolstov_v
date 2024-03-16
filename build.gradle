@@ -22,6 +22,8 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '5.11.0'
 
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.29")
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
 }
 
 test {

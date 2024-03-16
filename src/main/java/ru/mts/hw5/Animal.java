@@ -1,4 +1,4 @@
-package ru.mts.hw3;
+package ru.mts.hw5;
 
 public interface Animal {
     String getBreed();
