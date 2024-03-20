@@ -1,14 +1,16 @@
 package ru.mts.hw5.services;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import ru.mts.hw5.AbstractAnimal;
+import ru.mts.hw5.Animal;
 import ru.mts.hw5.pets.Cat;
 import ru.mts.hw5.pets.Dog;
 import ru.mts.hw5.predators.Shark;
 import ru.mts.hw5.predators.Wolf;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public interface CreateAnimalService {
@@ -36,14 +38,49 @@ public interface CreateAnimalService {
                 System.out.println(cat);
                 return cat;
         }
-            return null;
+        return null;
     }
 
-    default void createAnimal() {
-        int i = 0;
+    default Map<String, List<Animal>> createAnimal() {
+        Map<String, List<Animal>> mapAnimals = new HashMap<>();
+        List<Animal> startingList = new ArrayList<>();
+        List<List<Animal>> listAnimals = new ArrayList<>();
+        Animal animal;
+        animal = randomAnimal();
+        startingList.add(animal);
+        listAnimals.add(startingList);
+        boolean isListWasNotFound = true;
+        int i = 1;
         while (i < 10) {
-            randomAnimal();
-            i++;
+            animal = randomAnimal();
+            if (ObjectUtils.isNotEmpty(animal)) {
+                for (List<Animal> listAnimal : listAnimals) {
+                    if (animal.getClass().equals(listAnimal.get(0).getClass())) {
+                        listAnimal.add(animal);
+                        isListWasNotFound = false;
+                    }
+                }
+
+                while (isListWasNotFound) {
+                    List<Animal> list = new ArrayList<>();
+                    list.add(animal);
+                    listAnimals.add(list);
+                    isListWasNotFound = false;
+                }
+                isListWasNotFound = true;
+                i++;
+            }
+        }
+        addingAnimalsInMap(mapAnimals, listAnimals);
+
+        return mapAnimals;
+    }
+
+    default void addingAnimalsInMap(Map<String, List<Animal>> map, List<List<Animal>> animals) {
+        if (CollectionUtils.isNotEmpty(animals)) {
+            for (List<Animal> animal : animals) {
+                map.put(animal.get(0).getClass().getSimpleName(), animal);
+            }
         }
     }
 

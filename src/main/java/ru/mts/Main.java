@@ -8,6 +8,7 @@ import ru.mts.hw5.services.SearchServiceImpl;
 public class Main {
     public static void main(String[] args) {
         CreateAnimalServiceImpl createAnimalService = new CreateAnimalServiceImpl();
+        System.out.println("что то получилось "+createAnimalService.createAnimal());
 
         AbstractAnimal abstractAnimal;
         SearchServiceImpl service = new SearchServiceImpl();

@@ -16,8 +16,7 @@ public interface SearchService {
         }
         if (animal.getBirthDate().isLeapYear()) {
             System.out.println(animal.getName() + " был(а) рожден(а) в високосный год");
-        }
-        if (!animal.getBirthDate().isLeapYear()) {
+        } else {
             System.out.println(animal.getName() + " не был(а) рожден(а) в високосный год");
         }
     }

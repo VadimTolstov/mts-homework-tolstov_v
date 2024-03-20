@@ -1,6 +1,9 @@
 package ru.mts.hw5;
 
-public interface Animal {
+import lombok.Generated;
+
+
+public interface Animal{
     String getBreed();
 
     String getName();
