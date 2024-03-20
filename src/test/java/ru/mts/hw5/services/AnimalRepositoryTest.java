@@ -22,10 +22,22 @@ class AnimalRepositoryTest {
     void setUp() {
         animals = new Animal[20];
         for (int i = 0; i < 10; i++) {
-            animals[i] = new Dog("Немецкая", "Рекс" + i, 77.21, "Злюка", LocalDate.of(2000, 3, 13 + i));
+            animals[i] = Dog.builder()
+                    .breed("Немецкая")
+                    .name("Рекс" + i)
+                    .cost(77.21)
+                    .character("Злюка")
+                    .birthDate(LocalDate.of(2000, 3, 13 + i))
+                    .build();
         }
         for (int i = 10; i < 20; i++) {
-            animals[i] = new Wolf("Лесной", "Бим" + i, 88.21, "Добрый", LocalDate.of(1997, 10, 1 + i));
+            animals[i] = Wolf.builder()
+                    .breed("Лесной")
+                    .name("Бим" + i)
+                    .cost(88.21)
+                    .character("Добрый")
+                    .birthDate(LocalDate.of(1997, 10, 1 + i))
+                    .build();
         }
     }
 
@@ -58,7 +70,13 @@ class AnimalRepositoryTest {
     @Test
     @DisplayName("Передана дата старше всех объектов, проверяем что вернется самый старый объект и он один")
     void findOlderAnimalOldest() {
-        Cat cat = new Cat("Лесной", "Бим", 88.21, "Добрый", LocalDate.of(1991, 10, 1));
+        Cat cat = Cat.builder()
+                .breed("Лесной")
+                .name("Бим")
+                .cost(88.21)
+                .character("Добрый")
+                .birthDate(LocalDate.of(1991, 10, 1))
+                .build();
         animals[0] = cat;
         assertEquals(1, animalRepository.findOlderAnimal(animals, 1900).size());
         assertEquals(1991, animalRepository.findOlderAnimal(animals, 1900).get(cat));
@@ -94,7 +112,13 @@ class AnimalRepositoryTest {
     @DisplayName("Проверяем получения значения по ключу")
     void findDuplicateMapExpected() {
         assertEquals(10, animalRepository.findDuplicate(animals).get("Dog"));
-        Cat cat = new Cat("Лесной", "Бим", 88.21, "Добрый", LocalDate.of(1991, 10, 1));
+        Cat cat = Cat.builder()
+                .breed("Лесной")
+                .name("Бим")
+                .cost(88.21)
+                .character("Добрый")
+                .birthDate(LocalDate.of(1991, 10, 1))
+                .build();
         animals[0] = cat;
         assertEquals(1, animalRepository.findDuplicate(animals).get("Cat"));
         assertEquals(3, animalRepository.findDuplicate(animals).size());

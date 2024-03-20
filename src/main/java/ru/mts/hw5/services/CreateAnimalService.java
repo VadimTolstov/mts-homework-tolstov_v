@@ -22,19 +22,43 @@ public interface CreateAnimalService {
     default AbstractAnimal randomAnimal() throws NullPointerException {
         switch (new Random().nextInt(1, 5)) {
             case 1:
-                Shark shark = new Shark(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Shark shark = Shark.builder()
+                        .breed(randomSpecifications(breedList))
+                        .name(randomSpecifications(nameList))
+                        .cost(randomPrice())
+                        .character(randomSpecifications(charactersList))
+                        .birthDate(randomDate())
+                        .build();
                 System.out.println(shark);
                 return shark;
             case 2:
-                Wolf wolf = new Wolf(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Wolf wolf = Wolf.builder()
+                        .breed(randomSpecifications(breedList))
+                        .name(randomSpecifications(nameList))
+                        .cost(randomPrice())
+                        .character(randomSpecifications(charactersList))
+                        .birthDate(randomDate())
+                        .build();
                 System.out.println(wolf);
                 return wolf;
             case 3:
-                Dog dog = new Dog(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Dog dog = Dog.builder()
+                        .breed(randomSpecifications(breedList))
+                        .name(randomSpecifications(nameList))
+                        .cost(randomPrice())
+                        .character(randomSpecifications(charactersList))
+                        .birthDate(randomDate())
+                        .build();
                 System.out.println(dog);
                 return dog;
             case 4:
-                Cat cat = new Cat(randomSpecifications(breedList), randomSpecifications(nameList), randomPrice(), randomSpecifications(charactersList), randomDate());
+                Cat cat = Cat.builder()
+                        .breed(randomSpecifications(breedList))
+                        .name(randomSpecifications(nameList))
+                        .cost(randomPrice())
+                        .character(randomSpecifications(charactersList))
+                        .birthDate(randomDate())
+                        .build();
                 System.out.println(cat);
                 return cat;
         }

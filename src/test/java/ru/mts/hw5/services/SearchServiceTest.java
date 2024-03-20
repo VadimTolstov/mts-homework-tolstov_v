@@ -12,8 +12,20 @@ import static org.mockito.Mockito.*;
 
 class SearchServiceTest {
     private final SearchService searchService = mock(SearchServiceImpl.class);
-    private final Dog dogLeapYear = new Dog("Немецкая", "Рекс", 77.21, "Злюка", LocalDate.of(2024, 3, 13));
-    private final Wolf wolf = new Wolf("Лесной", "Бим", 88.21, "Добрый", LocalDate.of(1997, 10, 1));
+    private final Dog dogLeapYear = Dog.builder()
+            .breed("Немецкая")
+            .name("Рекс")
+            .cost(77.21)
+            .character("Злюка")
+            .birthDate(LocalDate.of(2024, 3, 13))
+            .build();
+    private final Wolf wolf = Wolf.builder()
+            .breed("Лесной")
+            .name("Бим")
+            .cost(88.21)
+            .character("Добрый")
+            .birthDate(LocalDate.of(1997, 10, 1))
+            .build();
 
 
     @Test
