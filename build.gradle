@@ -23,7 +23,14 @@ dependencies {
 
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.29")
 
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.14.0'
+    implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
 test {

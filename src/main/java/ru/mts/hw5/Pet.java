@@ -1,14 +1,9 @@
 package ru.mts.hw5;
 
-import java.time.LocalDate;
+import lombok.experimental.SuperBuilder;
 
+@SuperBuilder
 public class Pet extends AbstractAnimal {
-
-    public Pet(String breed, String name, Double cost, String character, LocalDate birthDate) {
-        super(breed, name, cost, character, birthDate);
-        play();
-    }
-
     public void play() {
         System.out.println("Люблю играть ");
     }
