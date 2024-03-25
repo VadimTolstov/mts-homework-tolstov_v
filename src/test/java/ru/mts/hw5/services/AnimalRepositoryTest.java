@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class AnimalRepositoryTest {
@@ -223,5 +224,13 @@ class AnimalRepositoryTest {
                 .build());
         assertFalse(animalRepository.findOldAndExpensive(abstractAnimalList).stream()
                 .anyMatch(animal -> animal.getName().equals("Альфа")));
+    }
+
+    @Test
+    @DisplayName("Проверяем я что метод findAverageAge был вызван с указанными параметрами")
+    void findAverageAge() {
+        doNothing().when(animalRepositoryMoc).findAverageAge(abstractAnimalList);
+        animalRepositoryMoc.findAverageAge(abstractAnimalList);
+        verify(animalRepositoryMoc, times(1)).findAverageAge(abstractAnimalList);
     }
 }
