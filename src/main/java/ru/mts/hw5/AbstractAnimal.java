@@ -1,23 +1,25 @@
 package ru.mts.hw5;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.experimental.SuperBuilder;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@EqualsAndHashCode
+@AllArgsConstructor
+@SuperBuilder
 public abstract class AbstractAnimal implements Animal {
+    @EqualsAndHashCode.Exclude
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     protected String breed; // порода
     protected String name; // имя
     protected Double cost; // цена в магазине
     protected String character; // характер
+    @Getter
     protected LocalDate birthDate;
-
-    public AbstractAnimal(String breed, String name, Double cost, String character, LocalDate birthDate) {
-        this.breed = breed;
-        this.name = name;
-        this.cost = cost;
-        this.character = character;
-        this.birthDate = birthDate;
-    }
 
     @Override
     public String getBreed() {
@@ -39,10 +41,6 @@ public abstract class AbstractAnimal implements Animal {
         return character;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
     @Override
     public String toString() {
 
@@ -54,4 +52,5 @@ public abstract class AbstractAnimal implements Animal {
                 ", birthDate=" + dateTimeFormatter.format(birthDate) +
                 '}';
     }
+
 }
